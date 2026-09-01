@@ -1,0 +1,17 @@
+name: threeebs-identity
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: threeebs-identity-app:latest
+    container_name: threeebs-identity-service
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "${APP_BIND:-0.0.0.0}:${APP_PORT:-6020}:80"
+    volumes:
+      - ./app:/var/www/html/app:ro
+      - ./design-system:/var/www/html/design-system:ro

@@ -1,0 +1,20 @@
+<header class="page-heading reveal"><p class="eyebrow">Ferramentas / Theme Lab</p><h1>Ajuste a identidade em tempo real.</h1><p>Experimente tokens sem alterar os valores oficiais. Suas preferências ficam apenas neste navegador.</p></header>
+<div class="lab-shell reveal">
+  <aside class="lab-controls">
+    <div class="lab-head"><div><h2>Tokens</h2><p>Personalização local</p></div><button class="icon-button" type="button" data-lab-reset aria-label="Restaurar valores">↺</button></div>
+    <fieldset><legend>Tema de visualização</legend><div class="theme-options"><label><input type="radio" name="lab-theme" value="dark" checked><span><?= icon('moon',17) ?>Escuro</span></label><label><input type="radio" name="lab-theme" value="light"><span><?= icon('sun',17) ?>Claro</span></label></div></fieldset>
+    <fieldset><legend>Cores</legend>
+      <label class="color-control"><span><i style="--control-color:#3ee7bd"></i>Ação principal</span><input type="color" value="#3ee7bd" data-token="--3eb-action-primary"><code>#3ee7bd</code></label>
+      <label class="color-control"><span><i style="--control-color:#07100f"></i>Canvas escuro</span><input type="color" value="#07100f" data-token="--3eb-bg-canvas"><code>#07100f</code></label>
+      <label class="color-control"><span><i style="--control-color:#edf8f5"></i>Texto principal</span><input type="color" value="#edf8f5" data-token="--3eb-text-primary"><code>#edf8f5</code></label>
+    </fieldset>
+    <fieldset><legend>Forma e densidade</legend><label class="range-control"><span>Raio dos componentes <code data-range-value="radius">14px</code></span><input type="range" min="0" max="28" value="14" data-token-range="--3eb-radius-md" data-unit="px" data-output="radius"></label><label class="range-control"><span>Densidade <code data-range-value="density">1</code></span><input type="range" min="0.8" max="1.25" value="1" step="0.05" data-token-range="--lab-density" data-unit="" data-output="density"></label></fieldset>
+    <div class="lab-actions"><button class="button button--primary" type="button" data-export-css>Exportar CSS</button><button class="button button--secondary" type="button" data-export-json>JSON</button></div>
+  </aside>
+  <section class="lab-preview" id="lab-preview" data-lab-theme="dark">
+    <div class="lab-preview-bar"><span>Preview</span><div><i></i><i></i><i></i></div></div>
+    <div class="lab-preview-page"><nav><img src="/assets/image/logo/logo-symbol-brand.png" alt=""><i></i><i></i><i></i><i></i></nav><main><header><div><small>Laboratório / Preview</small><strong>Projeto Orion</strong></div><span class="mock-avatar">TS</span></header><div class="lab-preview-content"><div><p class="mock-eyebrow">Visão geral</p><h2>Uma interface que responde aos tokens.</h2><p>Altere as opções ao lado e observe a mesma estrutura assumir uma nova expressão visual.</p><div><button class="button button--primary">Ação principal</button><button class="button button--secondary">Secundária</button></div></div><div class="lab-sample-grid"><article><span>Disponibilidade</span><strong>99,98%</strong><small class="positive">Sistema saudável</small></article><article><span>Projetos</span><strong>24</strong><small>18 em produção</small></article></div><div class="lab-sample-card"><div><span class="status status--online">Online</span><small>Atualizado agora</small></div><h3>Threeebs Portal</h3><p>Todos os serviços operando normalmente.</p><div class="mock-progress"><i></i></div></div></div></main></div>
+  </section>
+</div>
+<section class="contrast-tool reveal"><div><p class="eyebrow">Verificador</p><h2>Contraste de texto</h2><p>Compare duas cores e verifique a relação segundo WCAG.</p></div><div class="contrast-controls"><label>Texto<input type="color" value="#edf8f5" data-contrast-fg></label><span>sobre</span><label>Fundo<input type="color" value="#07100f" data-contrast-bg></label></div><div class="contrast-result" data-contrast-result><strong>17.2:1</strong><span class="status status--online">AAA</span><small>Aprovado para qualquer tamanho</small></div></section>
+

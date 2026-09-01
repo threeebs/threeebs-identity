@@ -1,0 +1,13 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { min-width: 20rem; scroll-behavior: smooth; background: var(--3eb-bg-canvas); }
+body { min-height: 100vh; margin: 0; color: var(--3eb-text-primary); background: var(--3eb-bg-canvas); font: 400 1rem/1.6 var(--3eb-font-body); text-rendering: optimizeLegibility; }
+img, svg { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+h1, h2, h3, h4, p { margin-top: 0; }
+h1, h2, h3, h4 { font-family: var(--3eb-font-display); line-height: 1.08; letter-spacing: -.035em; }
+code, pre, kbd { font-family: var(--3eb-font-code); }
+:focus-visible { outline: 3px solid var(--3eb-focus-ring); outline-offset: 3px; }
+::selection { color: var(--3eb-action-on-primary); background: var(--3eb-action-primary); }
+
