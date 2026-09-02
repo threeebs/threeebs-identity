@@ -47,6 +47,11 @@ function icon(string $name, int $size = 20): string
         'close' => '<path d="M18 6 6 18M6 6l12 12"/>',
         'code' => '<path d="m8 9-4 3 4 3m8-6 4 3-4 3m-3-9-2 12"/>',
         'accessibility' => '<circle cx="12" cy="4" r="2"/><path d="M5 8h14M12 6v15m-4-9-3 8m11-8 3 8"/>',
+        'login' => '<path d="M10 17l5-5-5-5M15 12H3"/><path d="M14 3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5"/>',
+        'user-plus' => '<path d="M15 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M19 8v6m-3-3h6"/>',
+        'mail' => '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+        'shield' => '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/>',
+        'chat' => '<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/><path d="M8 9h8M8 13h5"/>',
     ];
     $body = $paths[$name] ?? $paths['components'];
     return '<svg aria-hidden="true" width="' . $size . '" height="' . $size . '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' . $body . '</svg>';
@@ -62,4 +67,3 @@ function render(string $view, array $data = [], int $status = 200): never
     require config('root') . '/app/views/layouts/identity.php';
     exit;
 }
-
