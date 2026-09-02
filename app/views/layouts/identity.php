@@ -54,7 +54,7 @@ $currentPath = $currentPath ?? route_path();
     <h2 class="sr-only" id="command-title">Busca rápida</h2>
     <div class="command-results" id="command-results"></div>
   </dialog>
-  <script type="module" src="/assets/js/app.js"></script>
+  <script type="module" src="/assets/js/threeebs-identity.js"></script>
   <?php if ($currentPath === '/laboratorio'): ?>
     <script type="module" src="/assets/js/laboratory.js"></script>
   <?php endif; ?>

@@ -1,6 +1,6 @@
 <header class="page-heading reveal">
   <p class="eyebrow">Identidade / Logos</p>
-  <h1>O gato que conecta o ecossistema.</h1>
+  <h1>O sapo que conecta o ecossistema.</h1>
   <p>O símbolo, wordmark e lockup Threeebs existem em três variações para manter contraste e reconhecimento em qualquer superfície.</p>
 </header>
 
@@ -25,6 +25,14 @@
 
 <section class="section split-section reveal">
   <div><p class="eyebrow">Área de proteção</p><h2>Dê espaço para a marca respirar.</h2><p>Use como margem mínima a largura de um olho do símbolo em todos os lados. Nenhum texto, borda ou outro elemento deve entrar nessa área.</p></div>
-  <div class="clearspace-demo"><span></span><img src="/assets/image/logo/logo-symbol-brand.png" alt="Símbolo Threeebs com área de proteção"><i>x</i><b>x</b></div>
+  <div class="clearspace-demo">
+    <div class="clearspace-boundary">
+      <img src="/assets/image/logo/logo-symbol-brand.png" alt="Símbolo Threeebs com área de proteção">
+      <span class="clearspace-label clearspace-label--top" aria-hidden="true">x</span>
+      <span class="clearspace-label clearspace-label--right" aria-hidden="true">x</span>
+      <span class="clearspace-label clearspace-label--bottom" aria-hidden="true">x</span>
+      <span class="clearspace-label clearspace-label--left" aria-hidden="true">x</span>
+    </div>
+  </div>
 </section>
 

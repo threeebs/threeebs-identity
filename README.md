@@ -90,6 +90,8 @@ O pacote foi estruturado para integração com:
 - `Tiao-gpt/threeebs-portal`: Portal público, Docs, Fórum e Comunidade;
 - projetos PHP independentes.
 
+O arquivo `app/public/assets/js/threeebs-identity.js` controla somente a interface deste site de referência. Projetos consumidores devem importar o CSS compilado e copiar esse JavaScript apenas quando também adotarem a mesma navegação.
+
 Consulte `design-system/adapters/` para os caminhos sugeridos.
 
 O design system altera apenas apresentação. Autenticação, autorização, CSRF, sessões, banco e rotas permanecem sob responsabilidade de cada produto.
