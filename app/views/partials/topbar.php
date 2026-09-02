@@ -13,7 +13,7 @@
       <span class="theme-icon theme-icon--sun"><?= icon('sun', 19) ?></span>
       <span class="theme-icon theme-icon--moon"><?= icon('moon', 19) ?></span>
     </button>
-    <a class="icon-button" href="https://github.com/Tiao-gpt" target="_blank" rel="noreferrer" aria-label="Abrir GitHub"><?= icon('external', 19) ?></a>
+    <a class="icon-button" href="https://www.3eb.site/" target="_blank" rel="noreferrer" aria-label="Abrir GitHub"><?= icon('external', 19) ?></a>
   </div>
 </header>
 
