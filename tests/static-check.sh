@@ -12,7 +12,7 @@ app/public/index.php
 app/shared/bootstrap.php
 app/views/layouts/identity.php
 app/public/assets/css/identity.css
-app/public/assets/js/app.js
+app/public/assets/js/threeebs-identity.js
 app/public/assets/js/laboratory.js
 design-system/src/main.css
 design-system/src/tokens.css
@@ -34,6 +34,11 @@ grep -q 'APP_PORT=6020' .env.example
 grep -q '\${APP_BIND:-0.0.0.0}:\${APP_PORT:-6020}:80' docker-compose.yml
 grep -q -- '--3eb-action-primary' design-system/src/tokens.css
 grep -q 'prefers-reduced-motion' app/public/assets/css/responsive.css
+grep -q 'threeebs-identity.js' app/views/layouts/identity.php
+if grep -RniE '(^|[^[:alpha:]])gato([^[:alpha:]]|$)' app/views app/shared 2>/dev/null; then
+  echo "FALHA: referência antiga a gato encontrada; a marca usa o sapo." >&2
+  exit 1
+fi
 
 if command -v php >/dev/null 2>&1; then
   find app -name '*.php' -print | while IFS= read -r file; do
