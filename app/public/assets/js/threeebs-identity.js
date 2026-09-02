@@ -178,6 +178,8 @@ const commandItems = [
   ['Acessibilidade', '/fundamentos/acessibilidade'], ['Componentes', '/componentes'], ['Layouts', '/layouts'],
   ['Templates', '/templates'], ['Template Admin', '/templates/admin'], ['Template Portal', '/templates/portal'],
   ['Template Docs', '/templates/docs'], ['Template Comunidade', '/templates/community'], ['Autenticação', '/templates/auth'],
+  ['Login', '/experiencias/login'], ['Registro', '/experiencias/registro'], ['Interesse e newsletter', '/experiencias/interesse'],
+  ['Avisos e cookies', '/experiencias/cookies'], ['Chat', '/experiencias/chat'],
   ['Theme Lab', '/laboratorio'], ['Recursos', '/recursos'],
 ];
 
@@ -203,5 +205,68 @@ document.addEventListener('keydown', (event) => {
   if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); openCommand(); }
 });
 
+document.querySelectorAll('[data-demo-form]').forEach((form) => form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (!form.reportValidity()) return;
+  const message = form.dataset.success || 'Demonstração concluída.';
+  const status = form.querySelector('[data-form-success]');
+  if (status) {
+    status.textContent = message;
+    status.removeAttribute('hidden');
+  }
+  showToast(message);
+}));
+
+const experienceDialogs = {
+  notice: document.querySelector('#notice-dialog'),
+  cookies: document.querySelector('#cookie-settings-dialog'),
+};
+
+document.querySelector('[data-notice-open]')?.addEventListener('click', () => experienceDialogs.notice?.showModal());
+document.querySelectorAll('[data-cookie-settings-open]').forEach((button) => button.addEventListener('click', () => experienceDialogs.cookies?.showModal()));
+document.querySelectorAll('[data-experience-dialog-close]').forEach((button) => button.addEventListener('click', () => button.closest('dialog')?.close()));
+document.querySelectorAll('[data-cookie-choice]').forEach((button) => button.addEventListener('click', () => {
+  const choice = button.dataset.cookieChoice || 'Preferências salvas';
+  button.closest('dialog')?.close();
+  showToast(`${choice}: escolha demonstrativa salva`);
+}));
+
+function appendChatMessage(thread, text, role) {
+  const message = document.createElement('div');
+  const bubble = document.createElement('span');
+  const time = document.createElement('time');
+  message.className = `message message--${role}`;
+  bubble.textContent = text;
+  time.textContent = role === 'user' ? 'Agora' : 'Respondendo';
+  message.append(bubble, time);
+  thread.append(message);
+  thread.scrollTop = thread.scrollHeight;
+  return { message, time };
+}
+
+document.querySelectorAll('[data-chat-form]').forEach((form) => form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const input = form.querySelector('textarea, input');
+  const thread = form.closest('.chat-thread-panel, .chat-widget-demo')?.querySelector('[data-chat-thread]');
+  const value = input?.value.trim();
+  if (!input || !thread || !value) return;
+  appendChatMessage(thread, value, 'user');
+  input.value = '';
+  window.setTimeout(() => {
+    const reply = appendChatMessage(thread, 'Recebi sua mensagem. Neste exemplo, a resposta é gerada apenas na interface.', 'agent');
+    reply.time.textContent = 'Agora';
+  }, 500);
+}));
+
+document.querySelectorAll('[data-chat-suggestion]').forEach((button) => button.addEventListener('click', () => {
+  const panel = button.closest('.chat-thread-panel');
+  const input = panel?.querySelector('[data-chat-form] textarea, [data-chat-form] input');
+  if (!input) return;
+  input.value = button.dataset.chatSuggestion || '';
+  input.focus();
+}));
+
+
 window.threeebsToast = showToast;
+
 

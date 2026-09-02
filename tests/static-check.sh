@@ -12,8 +12,14 @@ app/public/index.php
 app/shared/bootstrap.php
 app/views/layouts/identity.php
 app/public/assets/css/identity.css
+app/public/assets/css/experiences.css
 app/public/assets/js/threeebs-identity.js
 app/public/assets/js/laboratory.js
+app/views/pages/login.php
+app/views/pages/register.php
+app/views/pages/interest.php
+app/views/pages/consent.php
+app/views/pages/chat.php
 design-system/src/main.css
 design-system/src/tokens.css
 design-system/dist/threeebs.css
@@ -35,6 +41,9 @@ grep -q '\${APP_BIND:-0.0.0.0}:\${APP_PORT:-6020}:80' docker-compose.yml
 grep -q -- '--3eb-action-primary' design-system/src/tokens.css
 grep -q 'prefers-reduced-motion' app/public/assets/css/responsive.css
 grep -q 'threeebs-identity.js' app/views/layouts/identity.php
+grep -q 'experiences.css' app/public/assets/css/identity.css
+grep -q '/experiencias/chat' app/public/index.php
+grep -q 'data-chat-form' app/views/pages/chat.php
 legacy_mascot='ga''to'
 if grep -RniE "(^|[^[:alpha:]])${legacy_mascot}([^[:alpha:]]|$)" app/views app/shared 2>/dev/null; then
   echo "FALHA: referência ao mascote anterior encontrada; a marca usa o Sapo." >&2
@@ -49,4 +58,4 @@ else
   echo "AVISO: PHP local ausente; execute a validação PHP dentro do container."
 fi
 
-echo "PASS: estrutura, PHP, Docker e tokens validados."
+echo "PASS: estrutura, PHP, Docker, experiências e tokens validados."

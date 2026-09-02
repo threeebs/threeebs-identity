@@ -18,7 +18,7 @@ until php -r '$s=@fsockopen($argv[1],(int)$argv[2],$e,$m,.2); if(!$s) exit(1); f
   sleep .1
 done
 
-routes="/ /identidade/logos /fundamentos/cores /fundamentos/tipografia /fundamentos/estrutura /fundamentos/movimento /fundamentos/acessibilidade /componentes /layouts /templates /templates/admin /templates/portal /templates/docs /templates/community /templates/auth /laboratorio /recursos"
+routes="/ /identidade/logos /fundamentos/cores /fundamentos/tipografia /fundamentos/estrutura /fundamentos/movimento /fundamentos/acessibilidade /componentes /layouts /templates /templates/admin /templates/portal /templates/docs /templates/community /templates/auth /experiencias/login /experiencias/registro /experiencias/interesse /experiencias/cookies /experiencias/chat /laboratorio /recursos"
 
 for route in $routes; do
   body=$(php -r '$url=$argv[1]; $body=@file_get_contents($url); if($body===false) exit(1); echo $body;' "http://$HOST:$PORT$route")
@@ -30,4 +30,3 @@ code=$(php -r '$h=get_headers($argv[1],true); preg_match("/ ([0-9]{3}) /",$h[0],
 test "$code" = "404" || { echo "FALHA: rota 404 retornou $code" >&2; exit 1; }
 
 echo "PASS: todas as rotas responderam corretamente."
-

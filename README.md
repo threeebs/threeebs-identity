@@ -1,6 +1,6 @@
 # Threeebs Identity
 
-Referência visual oficial do ecossistema Threeebs: tokens, temas, componentes, layouts, templates e laboratório interativo.
+Referência visual oficial do ecossistema Threeebs: tokens, temas, componentes, layouts, templates, experiências e laboratório interativo.
 
 ## Executar com Docker
 
@@ -94,7 +94,9 @@ O arquivo `app/public/assets/js/threeebs-identity.js` controla somente a interfa
 
 Consulte `design-system/adapters/` para os caminhos sugeridos.
 
-O design system altera apenas apresentação. Autenticação, autorização, CSRF, sessões, banco e rotas permanecem sob responsabilidade de cada produto.
+O design system altera apenas apresentação. Autenticação, autorização, CSRF, sessões, banco, envio de leads, consentimento, chat e rotas permanecem sob responsabilidade de cada produto.
+
+As páginas em `Experiências` são referências interativas de interface. Elas não persistem dados nem substituem revisão de segurança, privacidade ou jurídico.
 
 ## Rotas principais
 
@@ -114,6 +116,11 @@ O design system altera apenas apresentação. Autenticação, autorização, CSR
 /templates/docs
 /templates/community
 /templates/auth
+/experiencias/login
+/experiencias/registro
+/experiencias/interesse
+/experiencias/cookies
+/experiencias/chat
 /laboratorio
 /recursos
 ```

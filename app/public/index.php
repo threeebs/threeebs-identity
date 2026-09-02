@@ -41,6 +41,19 @@ if (preg_match('#^/templates/([a-z-]+)$#', $path, $matches)) {
     }
 }
 
+$experiences = [
+    '/experiencias/login' => ['view' => 'login', 'title' => 'Login'],
+    '/experiencias/registro' => ['view' => 'register', 'title' => 'Registro'],
+    '/experiencias/interesse' => ['view' => 'interest', 'title' => 'Interesse e newsletter'],
+    '/experiencias/cookies' => ['view' => 'consent', 'title' => 'Avisos e cookies'],
+    '/experiencias/chat' => ['view' => 'chat', 'title' => 'Chat'],
+];
+
+if (isset($experiences[$path])) {
+    $experience = $experiences[$path];
+    render($experience['view'], $common + ['title' => $experience['title']]);
+}
+
 if ($path === '/laboratorio') {
     render('laboratory', $common + ['title' => 'Theme Lab']);
 }
