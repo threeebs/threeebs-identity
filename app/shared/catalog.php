@@ -21,6 +21,13 @@ function navigation(): array
             ['href' => '/layouts', 'label' => 'Layouts', 'icon' => 'layout'],
             ['href' => '/templates', 'label' => 'Templates', 'icon' => 'template'],
         ]],
+        ['label' => 'Experiências', 'items' => [
+            ['href' => '/experiencias/login', 'label' => 'Login', 'icon' => 'login'],
+            ['href' => '/experiencias/registro', 'label' => 'Registro', 'icon' => 'user-plus'],
+            ['href' => '/experiencias/interesse', 'label' => 'Interesse', 'icon' => 'mail'],
+            ['href' => '/experiencias/cookies', 'label' => 'Avisos e cookies', 'icon' => 'shield'],
+            ['href' => '/experiencias/chat', 'label' => 'Chat', 'icon' => 'chat'],
+        ]],
         ['label' => 'Ferramentas', 'items' => [
             ['href' => '/laboratorio', 'label' => 'Theme Lab', 'icon' => 'lab'],
             ['href' => '/recursos', 'label' => 'Recursos', 'icon' => 'download'],
@@ -88,4 +95,3 @@ function template_data(string $slug): ?array
     ];
     return $templates[$slug] ?? null;
 }
-
