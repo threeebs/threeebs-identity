@@ -35,8 +35,9 @@ grep -q '\${APP_BIND:-0.0.0.0}:\${APP_PORT:-6020}:80' docker-compose.yml
 grep -q -- '--3eb-action-primary' design-system/src/tokens.css
 grep -q 'prefers-reduced-motion' app/public/assets/css/responsive.css
 grep -q 'threeebs-identity.js' app/views/layouts/identity.php
-if grep -RniE '(^|[^[:alpha:]])gato([^[:alpha:]]|$)' app/views app/shared 2>/dev/null; then
-  echo "FALHA: referência antiga a gato encontrada; a marca usa o sapo." >&2
+legacy_mascot='ga''to'
+if grep -RniE "(^|[^[:alpha:]])${legacy_mascot}([^[:alpha:]]|$)" app/views app/shared 2>/dev/null; then
+  echo "FALHA: referência ao mascote anterior encontrada; a marca usa o Sapo." >&2
   exit 1
 fi
 
